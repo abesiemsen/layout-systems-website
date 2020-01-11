@@ -1,15 +1,20 @@
 <header>
   <div *ngIf="course">
-    <h3>{{course.context}}</h3>
-    <h1>{{course.name}}</h1>
+    
+    <h3>{{ course.context }}</h3>
+    <h1>{{ course.name }}</h1>
+    <div>{{ course.slug }}-{{ course.section }}</div>
+    <div>{{ course.semester }}</div>
     <ul>
       <li *ngFor="let meetingTime of course.meetingTimes">
-        {{meetingTime.purpose}}: {{meetingTime.days}} {{meetingTime.time}} {{meetingTime.location}}
+        {{ meetingTime.purpose }}: {{ meetingTime.days }} {{ meetingTime.time }} {{ meetingTime.location }}
       </li>
     </ul>
     <ul>
-      <li *ngFor="let instructor of course.instructors">
-        {{instructor.firstName}} {{instructor.lastName}} <a href="mailto:{{instructor.email}}">{{instructor.email}}</a>
+      <li class="instructor" *ngFor="let instructor of course.instructors">
+        <span>{{ instructor.firstName }} {{ instructor.lastName }}</span>
+        <a href="mailto:{{ instructor.email }}">{{ instructor.email }}</a>
+        <a href="tel:{{ instructor.phone }}">{{ instructor.phone }}</a>
       </li>
     </ul>
   </div>

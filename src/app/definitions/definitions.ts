@@ -16,6 +16,7 @@ export interface Person {
 
 export interface Instructor extends Person {
   email: string;
+  phone: string;
 }
 
 export interface Student extends Person {
@@ -23,6 +24,9 @@ export interface Student extends Person {
 }
 
 export interface Course extends Entity {
+  department: string;
+  section: string;
+  semester: string;
   context: string;
   meetingTimes: MeetingTime[];
   instructors: Instructor[];
