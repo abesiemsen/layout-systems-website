@@ -1,0 +1,11 @@
+<h1>Deliverables</h1>
+<div *ngIf="deliverables">
+  <ul>
+    <li *ngFor="let deliverable of visibleDeliverables">
+      <h2><a [routerLink]="['/project/', deliverable.projectSlug]">{{deliverable.name}}</a></h2>
+      <p>{{formatDate(deliverable.assigned)}} &ndash; {{formatDate(deliverable.due)}}</p>
+      <div *ngIf="deliverable.description" [innerHTML]="deliverable.description"></div>
+      <div *ngIf="deliverable.instructions" [innerHTML]="deliverable.instructions"></div>
+    </li>
+  </ul>
+</div>

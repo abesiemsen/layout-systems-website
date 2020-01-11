@@ -1,0 +1,9 @@
+<h1>Students</h1>
+<div *ngIf="students">
+  <ul>
+    <li *ngFor="let student of students">
+      <a [routerLink]="['/student/', student.slug]" routerLinkActive="active">{{student.firstName}}
+        {{student.lastName}}</a>
+    </li>
+  </ul>
+</div>

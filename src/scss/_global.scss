@@ -1,0 +1,97 @@
+* {
+  transition-duration: 0.2s;
+  transition-property: none;
+}
+
+html {
+  font-family: $font-family-body;
+  font-size: 11pt;
+  color: $swatch-body-text;
+}
+
+body {
+  width: 90%;
+  max-width: 50em;
+  margin: 3em auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font-family-display;
+  font-weight: normal;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+a {
+  color: darken($swatch-primary, 10%);
+  text-decoration: none;
+  transition-property: color;
+
+  &:hover {
+    color: $swatch-primary;
+  }
+}
+
+p {
+  max-width: 60em;
+}
+
+code {
+  display: block;
+  color: $swatch-code;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+
+header {
+  color: lighten($swatch-body-text, 50%);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+
+  * {
+    margin: 0;
+  }
+
+  h1 {
+    color: $swatch-body-text;
+    font-size: 2.5rem;
+  }
+
+  ul {
+    padding:0;
+
+    li {
+      display: block;
+    }
+  }
+
+  nav {
+    margin-top: 1rem;
+    display: block;
+    border-bottom: $border-light;
+
+    a {
+      font-family: $font-family-display;
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      background-color: #eee;
+      display: inline-block;
+
+      &.selected {
+        background-color: $swatch-primary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+ol.lettergrades {
+  list-style-type:upper-alpha;  
+}

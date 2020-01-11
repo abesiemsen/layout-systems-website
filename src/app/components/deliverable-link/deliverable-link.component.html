@@ -1,0 +1,6 @@
+<a *ngIf="file" target="_blank" [href]="file" [ngClass]="{missing:!found}">{{displayName}}</a>
+<ul *ngIf="found && deliverableConfig && deliverableConfig.entrypoints">
+  <li *ngFor="let entrypoint of deliverableConfig.entrypoints">
+    <a target="_blank" [href]="entrypoint.file">{{entrypoint.name}}</a>
+  </li>
+</ul>

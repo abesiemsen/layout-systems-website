@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  configUrl: 'localhost:8080/layout2020spring.wudesign.me.json'
 };
 
 /*

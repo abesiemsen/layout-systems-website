@@ -1,0 +1,14 @@
+<div *ngIf="student && projects">
+  <h1>{{student.firstName}} {{student.lastName}}</h1>
+  <ul>
+    <li *ngFor="let project of visibleProjects">
+      <a [routerLink]="['/project/', project.slug]">{{project.name}}</a>
+      <ul>
+        <li *ngFor="let deliverable of visibleDeliverables(project)">
+          <wu-deliverable-link [label]="deliverable.name" [project]="project" [deliverable]="deliverable"
+            [person]="student"></wu-deliverable-link>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

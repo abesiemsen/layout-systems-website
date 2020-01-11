@@ -1,0 +1,62 @@
+@import "../../../scss/variables";
+
+.cols {
+  display:flex;
+  flex-wrap: wrap;
+    
+  @media (min-width:720px) {
+
+    flex-wrap: nowrap;
+
+    &>* {
+      box-sizing: border-box;
+    }
+    &>:not(:first-child) {
+      padding-left: 2rem;
+    }
+  }
+}
+
+aside li {
+  font-size: 0.8rem;
+}
+
+.deliverables {
+	.cols {
+		
+
+    &>:first-child,
+    section:first-child h6 {
+      margin-top: 0;
+    }
+
+    @media (min-width:720px) {
+      &>:first-child {
+        width: 70%;
+      }
+    }
+
+    .person-links {
+      column-count: 2;
+
+      &>li {
+        display: block;
+      }
+    }
+	}
+}
+
+h6 {
+  margin: 1em 0;
+  color: lighten($swatch-body-text, 30%);
+  text-transform: uppercase;
+}
+
+.references,
+.examples {
+  padding: 0;
+
+  li {
+    display: block;
+  }
+}
