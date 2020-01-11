@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ProjectsComponent
   },
   {
-    path: 'project/:slug',
+    path: 'projects/:slug',
     component: ProjectComponent
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
     component: StudentsComponent
   },
   {
-    path: 'student/:slug',
+    path: 'students/:slug',
     component: StudentComponent
   },
   {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import * as moment from 'moment';
+import { environment } from '@environments/environment';
 
 import {
   Configuration, Course, Project,
@@ -13,8 +14,6 @@ import {
 export class ConfigurationService {
 
   private configuration: Configuration;
-  private config = 'https://gist.githubusercontent.com/abesiemsen/00043f6ce1a3d1dad4e897bfe540ab83/raw/applications2018spring.wudesign.me.json';
-
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +21,7 @@ export class ConfigurationService {
     if (this.configuration) {
       return Promise.resolve(this.configuration);
     }
-    return this.http.get(this.config)
+    return this.http.get(environment.configUrl)
       .toPromise()
       .then((configuration: Configuration) => this.configuration = configuration);
   }

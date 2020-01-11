@@ -1,6 +1,6 @@
 @import "../../../scss/variables";
 
-* {
+:host {
 	font-size: 0.8rem;
 } 
 
@@ -8,7 +8,8 @@ ul {
 	padding-left: 0.5rem;
 
 	li {
-		display: block;
+    display: block;
+    margin-bottom: 0;
 
 		a {
 			font-size: 0.8em;
