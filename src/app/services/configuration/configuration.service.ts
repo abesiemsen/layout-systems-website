@@ -21,7 +21,7 @@ export class ConfigurationService {
     if (this.configuration) {
       return Promise.resolve(this.configuration);
     }
-    return this.http.get(environment.configUrl)
+    return this.http.get(`${environment.resourcePath}course.json`)
       .toPromise()
       .then((configuration: Configuration) => this.configuration = configuration);
   }

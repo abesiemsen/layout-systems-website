@@ -23,6 +23,7 @@ export interface Student extends Person {
 }
 
 export interface Course extends Entity {
+  context: string;
   meetingTimes: MeetingTime[];
   instructors: Instructor[];
   syllabus: string;
@@ -56,6 +57,8 @@ export interface Project extends Entity {
   deliverables?: Deliverable[];
   references?: Reference[];
   examples?: Example[];
+  start?: string;
+  end?: string;
 }
 
 export interface Deliverable extends Entity {

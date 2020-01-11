@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  configUrl: 'http://localhost:8080/layout2020spring.wudesign.me.json'
+  resourcePath: 'http://localhost:8080/'
 };
 
 /*

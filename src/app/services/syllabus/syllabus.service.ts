@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SyllabusService {
     if (this.syllabus) {
       return Promise.resolve(this.syllabus);
     }
-    return this.http.get(url, { responseType: 'text' })
+    return this.http.get(`${environment.resourcePath}${url}`, { responseType: 'text' })
       .toPromise()
       .then((syllabus: string) => {
         this.syllabus = syllabus;
