@@ -4,13 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DeliverableLinkComponent } from './components/deliverable-link/deliverable-link.component';
-import { DeliverablesComponent } from './pages/deliverables/deliverables.component';
-import { ProjectComponent } from './pages/project/project.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { StudentComponent } from './pages/student/student.component';
-import { StudentsComponent } from './pages/students/students.component';
-import { SyllabusComponent } from './pages/syllabus/syllabus.component';
+import { DeliverableLinkComponent } from './components';
+import { TelPipe } from './pipes';
+import {
+  DeliverablesComponent, ProjectComponent, ProjectsComponent,
+  StudentComponent, StudentsComponent, SyllabusComponent
+} from './pages';
 
 const pages = [
   DeliverablesComponent,
@@ -25,11 +24,16 @@ const components = [
   DeliverableLinkComponent
 ];
 
+const pipes = [
+  TelPipe
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     ...pages,
-    ...components
+    ...components,
+    ...pipes,
   ],
   imports: [
     BrowserModule,

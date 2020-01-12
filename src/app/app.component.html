@@ -14,7 +14,7 @@
       <li class="instructor" *ngFor="let instructor of course.instructors">
         <span>{{ instructor.firstName }} {{ instructor.lastName }}</span>
         <a href="mailto:{{ instructor.email }}">{{ instructor.email }}</a>
-        <a href="tel:{{ instructor.phone }}">{{ instructor.phone }}</a>
+        <a href="tel:{{ instructor.phone | tel }}">{{ instructor.phone }}</a>
       </li>
     </ul>
   </div>

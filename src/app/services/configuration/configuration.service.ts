@@ -69,7 +69,9 @@ export class ConfigurationService {
 
   projects(): Promise<Project[]> {
     return this.course()
-      .then((course: Course) => course.projects);
+      .then((course: Course) => course.projects
+        .filter((project: Project) => project.hidden !== true)
+      );
   }
 
   project(slug): Promise<Project> {
@@ -81,10 +83,10 @@ export class ConfigurationService {
   deliverables(): Promise<Deliverable[]> {
     return this.projects()
       .then((projects: Project[]) => projects
-        .filter((project: Project) => project.hidden !== true)
         .reduce((accumulator: Deliverable[], project: Project) => {
           return accumulator
             .concat(project.deliverables
+              .filter((deliverable: Deliverable) => deliverable.hidden !== true)
               .map((deliverable: Deliverable) => {
                 deliverable.projectSlug = project.slug;
                 return deliverable;
