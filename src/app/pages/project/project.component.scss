@@ -24,7 +24,6 @@ aside li {
 .deliverables {
 	.cols {
 		
-
     &>:first-child,
     section:first-child h6 {
       margin-top: 0;
@@ -41,6 +40,7 @@ aside li {
 
       &>li {
         display: block;
+        margin-bottom: 0;
       }
     }
 	}

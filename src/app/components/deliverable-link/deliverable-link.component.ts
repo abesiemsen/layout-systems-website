@@ -31,7 +31,7 @@ export class DeliverableLinkComponent implements OnInit {
     if (this.label) {
       return this.label;
     }
-    return this.person.firstName + ' ' + this.person.lastName;
+    return this.person.firstName + ' ' + this.person.lastName.slice(0,1).toUpperCase() + '.';
   }
 
   private checkLinks() {

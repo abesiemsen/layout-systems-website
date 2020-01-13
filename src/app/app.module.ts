@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DeliverableLinkComponent } from './components';
-import { TelPipe } from './pipes';
+import { ResourcePathPipe, TelPipe } from './pipes';
 import {
   DeliverablesComponent, ProjectComponent, ProjectsComponent,
   StudentComponent, StudentsComponent, SyllabusComponent
@@ -17,15 +17,16 @@ const pages = [
   ProjectsComponent,
   StudentComponent,
   StudentsComponent,
-  SyllabusComponent
+  SyllabusComponent,
 ];
 
 const components = [
-  DeliverableLinkComponent
+  DeliverableLinkComponent,
 ];
 
 const pipes = [
-  TelPipe
+  ResourcePathPipe,
+  TelPipe,
 ];
 
 @NgModule({
@@ -38,9 +39,9 @@ const pipes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

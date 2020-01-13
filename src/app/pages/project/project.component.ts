@@ -37,7 +37,8 @@ export class ProjectComponent implements OnInit {
   }
 
   private loadPersons(): Promise<Person[]> {
-    return this.configuration.students()
+    // return this.configuration.students()
+    return this.configuration.persons()
       .then((persons: Person[]) => this.persons = persons);
   }
 
@@ -51,6 +52,10 @@ export class ProjectComponent implements OnInit {
 
   formatDate(date: string): string {
     return moment(date).format('MMM D');
+  }
+
+  have(value: any[]): boolean {
+    return !!value && !!value.length;
   }
 
 }
