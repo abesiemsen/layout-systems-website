@@ -51,7 +51,7 @@ export class ProjectComponent implements OnInit {
   }
 
   formatDate(date: string): string {
-    return moment(date).format('MMM D');
+    return date ? moment(date).format('MMM D') : 'TBD';
   }
 
   have(value: any[]): boolean {
