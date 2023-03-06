@@ -58,4 +58,11 @@ export class ProjectComponent implements OnInit {
     return !!value && !!value.length;
   }
 
+  repoNameForDeliverable(deliverable: Deliverable): string {
+    if (!!this.project.groups && !!deliverable.useGroups) {
+      return '(group repo)';
+    }
+    return '(your repo)';
+  }
+
 }

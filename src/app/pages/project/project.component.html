@@ -59,11 +59,11 @@
             </section>
             <section *ngIf="deliverable.file">
               <h6>Upload Path</h6>
-              <code>(your repo)/{{linkService.abstractDeliverableSingleFilePath(project, deliverable)}}</code>
+              <code>{{repoNameForDeliverable(deliverable)}}/{{linkService.abstractDeliverableSingleFilePath(project, deliverable)}}</code>
               <h6>Or provide <a target="_blank"
                   [href]="'deliverable.json' | resourcePath ">deliverable.json</a>
               </h6>
-              <code>(your repo)/{{linkService.abstractDeliverableConfigPath(project, deliverable)}}</code>
+              <code>{{repoNameForDeliverable(deliverable)}}/{{linkService.abstractDeliverableConfigPath(project, deliverable)}}</code>
             </section>
           </div>
           <ul *ngIf="deliverable.file && !deliverable.useGroups" class="person-links">
