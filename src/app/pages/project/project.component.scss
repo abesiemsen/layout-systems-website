@@ -37,7 +37,10 @@ aside li {
 
     .person-links {
       column-count: 2;
+    }
 
+    .person-links,
+    .group-links {
       &>li {
         display: block;
         margin-bottom: 0;

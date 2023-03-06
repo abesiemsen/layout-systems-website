@@ -66,9 +66,15 @@
               <code>(your repo)/{{linkService.abstractDeliverableConfigPath(project, deliverable)}}</code>
             </section>
           </div>
-          <ul *ngIf="deliverable.file" class="person-links">
+          <ul *ngIf="deliverable.file && !deliverable.useGroups" class="person-links">
             <li *ngFor="let person of persons">
               <wu-deliverable-link [project]="project" [deliverable]="deliverable" [person]="person">
+              </wu-deliverable-link>
+            </li>
+          </ul>
+          <ul *ngIf="deliverable.file && !!project.groups && !!deliverable.useGroups" class="group-links">
+            <li *ngFor="let group of project.groups">
+              <wu-deliverable-link [project]="project" [deliverable]="deliverable" [person]="group">
               </wu-deliverable-link>
             </li>
           </ul>

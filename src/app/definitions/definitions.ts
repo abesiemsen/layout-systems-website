@@ -14,6 +14,12 @@ export interface Person {
   basePath: string;
 }
 
+export interface Group {
+  slug: string;
+  name: string;
+  basePath: string;
+}
+
 export interface Instructor extends Person {
   email: string;
   phone: string;
@@ -59,6 +65,7 @@ export interface Project extends Entity {
   description?: string;
   instructions?: string;
   deliverables?: Deliverable[];
+  groups?: Group[];
   references?: Reference[];
   examples?: Example[];
   start?: string;
@@ -68,6 +75,7 @@ export interface Project extends Entity {
 export interface Deliverable extends Entity {
   projectSlug?: string;
   hidden?: boolean;
+  useGroups?: boolean;
   assigned: string;
   due: string;
   file: string;
